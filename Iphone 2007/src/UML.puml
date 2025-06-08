@@ -1,29 +1,29 @@
-@startuml
-interface ReprodutorMusical {
-    +tocar()
-    +pausar()
-    +selecionarMusica(String musica)
-}
+    direction LR
 
-interface AparelhoTelefonico {
-    +ligar(String numero)
-    +atender()
-    +iniciarCorreioVoz()
-}
+    class Iphone {
+        - String modelo
+        - String imei
+        + Iphone(modelo, imei)
+    }
 
-interface NavegadorInternet {
-    +exibirPagina(String url)
-    +adicionarNovaAba()
-    +atualizarPagina()
-}
+    class ReprodutorMusical {
+        + tocar()
+        + pausar()
+        + selecionarMusica(String musica)
+    }
 
-class Iphone {
-    -String modelo
-    -String imei
-    +Iphone(modelo, imei)
-}
+    class AparelhoTelefonico {
+        + ligar(String numero)
+        + atender()
+        + iniciarCorreioVoz()
+    }
 
-Iphone ..|> ReprodutorMusical
-Iphone ..|> AparelhoTelefonico
-Iphone ..|> NavegadorInternet
-@enduml
+    class NavegadorInternet {
+        + exibirPagina(String url)
+        + adicionarNovaAba()
+        + atualizarPagina()
+    }
+
+    Iphone ..|> ReprodutorMusical
+    Iphone ..|> AparelhoTelefonico
+    Iphone ..|> NavegadorInternet
